@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Mission to Mars</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    </head>
+    <body>
+        <H1>MISSON TO THE BIG ORANGE PLANET</H1>
+        <p><a class="btn btn-primary btn-lg" href="/mars_scrape" role="button">Scraping DATA</a></p>
+        <br>
+        <div class="media">
+            <div class="media-body">
+                <h2>MARS NEWS</h2>
+                <h3 class="media-heading">{{find.TITLE}}</h3>
+                <p>{{find.PARAGRAPH}}</p>
+            </div>
+        </div> 
+        <br>
+        <h2>Featured Mars Image</h2> 
+        <img src = "{{find._image}}|default('static/images/error.jpg', true}}" class="img-responsive"  alt="IMAGE">
+
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <h3>WEATHER ON MARS</h3>
+                <p>{{find.WEATHER}}</p>
+            </div>
+        </div>
+        <br>
+
+        <div class="row" id="mars-hemispheres" style="margin-top:80px;">
+
+            <div class="page-header">
+              <h2 class="text-center">Mars Hemispheres</h2>
+            </div>
+          
+              <div class="col-md-6">
+                  <div class="thumbnail">
+      
+                  <img src="{{hemisphere.img_url | default('static/images/error.jpg', true)}}"
+                      alt="IMAGE">
+                  <div class="caption">
+                      <h3>{{hemisphere.title}}</h3>
+                  </div>
+                  </div>
+              </div>
+      
+          </div>
+      
+        </div>
+
+    </body>
+</html>
